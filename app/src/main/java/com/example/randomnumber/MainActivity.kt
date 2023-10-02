@@ -8,20 +8,24 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.generate_button)
+        val button: Button = findViewById(R.id.generate_button)
         button.setOnClickListener {
+
             onClick() // Вызов функции onClick() при нажатии на кнопку
         }
     }
 
     private fun onClick() {
-        val editText1 = findViewById<EditText>(R.id.edit_text1)
+        val editText1: EditText = findViewById(R.id.edit_text1)
+        val editText2: EditText = findViewById(R.id.edit_text2)
+        val resultText: TextView = findViewById(R.id.result_text)
+
         val userInput1 = editText1.text.toString()
-        val editText2 = findViewById<EditText>(R.id.edit_text2)
         val userInput2 = editText2.text.toString()
         if (userInput1.isNotEmpty()) {
             if (userInput2.isNotEmpty()) {
@@ -29,7 +33,6 @@ class MainActivity : AppCompatActivity() {
                 val check = generator.checkRequire()
                 if (check){
                     val result = generator.generate()
-                    val resultText = findViewById<TextView>(R.id.result_text)
                     resultText.text = result.toString() // Установка результата в TextView
                 }
                 else {

@@ -14,6 +14,6 @@ class Generator(private val number1: String,
     fun generate(): Int {
         val num1Int = number1.toInt()
         val num2Int = number2.toInt()
-        return Random.nextInt(num1Int, num2Int + 1)
+        return (num1Int..num2Int).random()
     }
 }
