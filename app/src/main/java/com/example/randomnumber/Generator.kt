@@ -1,7 +1,5 @@
 package com.example.randomnumber
 
-import kotlin.random.Random
-
 class Generator(private val number1: String,
                 private val number2: String) {
 

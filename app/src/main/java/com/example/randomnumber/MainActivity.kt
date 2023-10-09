@@ -1,7 +1,6 @@
 package com.example.randomnumber
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -15,8 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.generate_button)
         button.setOnClickListener {
-
-            onClick() // Вызов функции onClick() при нажатии на кнопку
+            onClick()
         }
     }
 
@@ -33,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 val check = generator.checkRequire()
                 if (check){
                     val result = generator.generate()
-                    resultText.text = result.toString() // Установка результата в TextView
+                    resultText.text = result.toString()
                 }
                 else {
                     Toast.makeText(this, "x должен быть меньше или равен y!", Toast.LENGTH_SHORT).show()
