@@ -8,20 +8,30 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var editText1: EditText
+    private lateinit var editText2: EditText
+    private lateinit var resultText: TextView
+    private lateinit var button: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button: Button = findViewById(R.id.generate_button)
+        initViews()
+
         button.setOnClickListener {
             onClick()
         }
     }
 
+    private fun initViews(){
+        editText1 = findViewById(R.id.edit_text1)
+        editText2 = findViewById(R.id.edit_text2)
+        resultText = findViewById(R.id.result_text)
+        button = findViewById(R.id.generate_button)
+    }
+
     private fun onClick() {
-        val editText1: EditText = findViewById(R.id.edit_text1)
-        val editText2: EditText = findViewById(R.id.edit_text2)
-        val resultText: TextView = findViewById(R.id.result_text)
 
         val userInput1 = editText1.text.toString()
         val userInput2 = editText2.text.toString()
